@@ -2,6 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
+<script>
+	$(document).ready(function(){
+		$(".nav-tabs a:first").tab("show");
+	});
+</script>
+
+
+
 <h1>${user.name}</h1>
 
 
@@ -22,7 +30,7 @@
 					<h4 class="modal-title" id="myModalLabel">New blog</h4>
 				</div>
 				<div class="modal-body">
-				
+
 					<div class="form-group">
 						<label for="name" class="col-sm-2 control-label">Name:</label>
 						<div class="col-sm-10">
@@ -48,25 +56,34 @@
 
 
 
-<c:forEach items="${user.blogs}" var="blog">
-	<h1>${blog.name}</h1>
-	<p>${blog.url}</p>
-
-	<table class="table table-striped table-bordered table-hover">
-		<thead>
-			<tr>
-				<th>Title</th>
-				<th>Link</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${blog.items}" var="item">
-				<tr>
-					<td>${item.title}</td>
-					<td>${item.link}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-
-	</table>
-</c:forEach>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+	<c:forEach items="${user.blogs}" var="blog">
+		<li><a href="#blog_${blog.id}" data-toggle="tab">${blog.name}</a></li>
+	</c:forEach>
+</ul>
+<!-- Tab panes -->
+<div class="tab-content">
+	<c:forEach items="${user.blogs}" var="blog">
+		<div class="tab-pane" id="blog_${blog.id}">
+			<h1>${blog.name}</h1>
+			<p>${blog.url}</p>
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Link</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${blog.items}" var="item">
+						<tr>
+							<td>${item.title}</td>
+							<td>${item.link}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</c:forEach>
+</div>
