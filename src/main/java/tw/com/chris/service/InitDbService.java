@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import tw.com.chris.entity.Blog;
@@ -48,7 +49,8 @@ public class InitDbService {
 		
 		User userAdmin = new User();
 		userAdmin.setName("admin");
-		userAdmin.setPassword("admin");
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		userAdmin.setPassword(encoder.encode("admin"));
 		userAdmin.setEmail("chris09.yu@gmail.com");
 		List<Role> roles = new ArrayList<Role>();
 		roles.add(roleUser);
