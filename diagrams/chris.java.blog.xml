@@ -3,8 +3,8 @@
 		<entity-name>tw.com.chris.entity.Item</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
-		<entity-X-Coordinate>970</entity-X-Coordinate>
-		<entity-Y-Coordinate>197</entity-Y-Coordinate>
+		<entity-X-Coordinate>720</entity-X-Coordinate>
+		<entity-Y-Coordinate>79</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -14,8 +14,8 @@
 		<entity-name>tw.com.chris.entity.Blog</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>186</entity-height>
-		<entity-X-Coordinate>548</entity-X-Coordinate>
-		<entity-Y-Coordinate>147</entity-Y-Coordinate>
+		<entity-X-Coordinate>437</entity-X-Coordinate>
+		<entity-Y-Coordinate>64</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -25,8 +25,8 @@
 		<entity-name>tw.com.chris.entity.Role</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>146</entity-height>
-		<entity-X-Coordinate>38</entity-X-Coordinate>
-		<entity-Y-Coordinate>96</entity-Y-Coordinate>
+		<entity-X-Coordinate>50</entity-X-Coordinate>
+		<entity-Y-Coordinate>59</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>
@@ -36,8 +36,8 @@
 		<entity-name>tw.com.chris.entity.User</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
-		<entity-X-Coordinate>287</entity-X-Coordinate>
-		<entity-Y-Coordinate>121</entity-Y-Coordinate>
+		<entity-X-Coordinate>270</entity-X-Coordinate>
+		<entity-Y-Coordinate>59</entity-Y-Coordinate>
 		<primary-collapsed>false</primary-collapsed>
 		<relation-collapsed>false</relation-collapsed>
 		<basic-collapsed>false</basic-collapsed>

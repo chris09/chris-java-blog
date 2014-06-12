@@ -13,10 +13,10 @@ public class Role {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+
 	private String name;
-	
-	@ManyToMany
+
+	@ManyToMany(mappedBy = "roles")
 	private List<User> users;
 
 	public Integer getId() {
@@ -42,8 +42,5 @@ public class Role {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
-	
-	
-	
-	
+
 }
