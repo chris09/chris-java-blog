@@ -37,6 +37,9 @@ public class InitDbService {
 	private ItemRepository itemRepository;
 	
 	
+	/**
+	 * 
+	 */
 	@PostConstruct
 	public void init(){
 		Role roleUser = new Role();
@@ -49,6 +52,7 @@ public class InitDbService {
 		
 		User userAdmin = new User();
 		userAdmin.setName("admin");
+		userAdmin.setEnabled(true);
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		userAdmin.setPassword(encoder.encode("admin"));
 		userAdmin.setEmail("chris09.yu@gmail.com");
