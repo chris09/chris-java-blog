@@ -40,5 +40,6 @@
 	
 	<jpa:repositories base-package="tw.com.chris.repository" />
 	
+	<import resource="security.xml"/>
 	
 </beans>
