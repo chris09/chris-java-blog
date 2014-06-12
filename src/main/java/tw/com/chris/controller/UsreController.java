@@ -1,0 +1,34 @@
+package tw.com.chris.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import tw.com.chris.service.UserService;
+
+@Controller
+public class UsreController {
+
+	@Autowired
+	private UserService userService;
+	
+	
+	@RequestMapping("/users")
+	public String users(Model model){
+		model.addAttribute("users", userService.findAll());
+		return "users";
+	}
+
+	public UserService getUserService() {
+		return userService;
+	}
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+	
+	
+	
+	
+}

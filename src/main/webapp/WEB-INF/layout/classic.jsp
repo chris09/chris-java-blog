@@ -36,8 +36,8 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="<spring:url value='index' />">Home</a></li>
-              <li><a href="#">Link</a></li>
+              <li class="active"><a href="<spring:url value='/index.html' />">Home</a></li>
+              <li><a href="<spring:url value='/users.html' />">Users</a></li>
               <li><a href="#">Link</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
