@@ -16,6 +16,7 @@ import tw.com.chris.repository.BlogRepository;
 import tw.com.chris.repository.ItemRepository;
 import tw.com.chris.repository.UserRepository;
 
+@Transactional
 @Service
 public class UserService {
 
@@ -48,7 +49,10 @@ public class UserService {
 		user.setBlogs(blogs);
 		return user;
 	}
-	
+
+	public void save(User user) {
+		userRepository.save(user);
+	}
 	
 	
 }
