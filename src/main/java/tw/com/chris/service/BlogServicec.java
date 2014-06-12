@@ -23,6 +23,10 @@ public class BlogServicec {
 		blogRepository.save(blog);
 	}
 
+	public void delete(int id) {
+		blogRepository.delete(id);
+	}
+
 	
 	
 }

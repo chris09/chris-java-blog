@@ -55,6 +55,7 @@
 </form:form>
 
 
+<br><br>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
@@ -67,7 +68,11 @@
 	<c:forEach items="${user.blogs}" var="blog">
 		<div class="tab-pane" id="blog_${blog.id}">
 			<h1>${blog.name}</h1>
-			<p>${blog.url}</p>
+			<p>
+			<a href="<spring:url value='/blog/remove/${blog.id}.html' />" class="btn btn-danger">remove blog</a>
+			${blog.url}
+			</p>
+			
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>
