@@ -37,4 +37,8 @@
 	<bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
+	<jpa:repositories base-package="tw.com.chris.repository" />
+	
+	
 </beans>
