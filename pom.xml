@@ -10,6 +10,7 @@
 	<!-- Shared version number properties -->
 	<properties>
 		<org.springframework.version>4.0.2.RELEASE</org.springframework.version>
+		<org.apache.tiles>3.0.3</org.apache.tiles>
 	</properties>
 
 	<dependencies>
@@ -149,15 +150,35 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>${org.apache.tiles}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${org.apache.tiles}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.8</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.2.0.v20140526</version>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -167,6 +188,7 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 
