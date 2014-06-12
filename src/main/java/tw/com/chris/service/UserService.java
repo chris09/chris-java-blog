@@ -18,6 +18,9 @@ public class UserService {
 		return userRepository.findAll();
 	}
 	
+	public User findOne(int id) {
+		return userRepository.findOne(id);
+	}
 
 	public UserRepository getUserRepository() {
 		return userRepository;
@@ -26,6 +29,8 @@ public class UserService {
 	public void setUserRepository(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
+
+
 	
 	
 }
