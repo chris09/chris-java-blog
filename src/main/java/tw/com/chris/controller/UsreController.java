@@ -2,9 +2,12 @@ package tw.com.chris.controller;
 
 import java.security.Principal;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,7 +56,10 @@ public class UsreController {
 	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	public String doRegistrer(@ModelAttribute("user") User user) {
+	public String doRegistrer(@Valid @ModelAttribute("user") User user, BindingResult result) {
+		if(result.hasErrors()){
+			return "user-register";
+		}
 		userService.save(user);
 		return "redirect:/register.html?success=true";
 	}
@@ -66,7 +72,10 @@ public class UsreController {
 	}
 	
 	@RequestMapping(value="/account", method=RequestMethod.POST)
-	public String doRegistrer(@ModelAttribute("blog") Blog blog, Principal principal) {
+	public String doAddBlog(Model model, @Valid @ModelAttribute("blog") Blog blog, BindingResult result, Principal principal) {
+		if(result.hasErrors()){
+			return account(model, principal);
+		}
 		String name = principal.getName();
 		blogService.save(blog, name);
 		return "redirect:/account.html";
