@@ -49,7 +49,7 @@ public class RssService {
 				for (TRssItem rssItem : items) {
 					Item item = new Item();
 					item.setTitle(rssItem.getTitle());
-					item.setDecription(rssItem.getDescription());
+					item.setDescription(rssItem.getDescription());
 					item.setLink(rssItem.getLink());
 					Date pubDate = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.ENGLISH).parse(rssItem.getPubDate());
 					item.setPublishedDate(pubDate);
