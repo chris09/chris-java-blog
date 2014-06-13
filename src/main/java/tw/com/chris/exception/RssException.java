@@ -1,4 +1,4 @@
-package tw.com.exception;
+package tw.com.chris.exception;
 
 public class RssException extends Exception{
 
