@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import tw.com.chris.entity.Blog;
 import tw.com.chris.entity.User;
+import tw.com.chris.repository.UserRepository;
 import tw.com.chris.service.BlogServicec;
 import tw.com.chris.service.UserService;
 
@@ -73,7 +74,8 @@ public class UsreController {
 	
 	@RequestMapping("/blog/remove/{id}")
 	public String removeBlog(@PathVariable int id){
-		blogService.delete(id);
+		Blog blog = blogService.findOne(id);
+		blogService.delete(blog);
 		return "redirect:/account.html";
 	}
 	
