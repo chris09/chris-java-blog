@@ -3,6 +3,7 @@ package tw.com.chris.entity;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,32 +15,35 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
+import tw.com.chris.annotation.UniqueUsername;
+
 @Entity
 public class User {
 
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
-	@Size(min=3, message="Name must be at lease 3 characters")
+
+	@Size(min = 3, message = "Name must be at lease 3 characters")
+	@Column(unique = true)
+	@UniqueUsername(message = "Such username already exists!")
 	private String name;
-	
-	@Email(message="Invalid Email add")
-	@Size(min=3, message="Invalid Email add")
+
+	@Email(message = "Invalid Email add")
+	@Size(min = 3, message = "Invalid Email add")
 	private String email;
 
-	@Size(min=3, message="Name must be at lease 3 characters")
+	@Size(min = 3, message = "Name must be at lease 3 characters")
 	private String password;
-	
+
 	private boolean enabled;
 
 	@ManyToMany
 	@JoinTable
 	private List<Role> roles;
-	
-	@OneToMany(mappedBy="user", cascade=CascadeType.REMOVE)
+
+	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
 	private List<Blog> blogs;
-	
 
 	public Integer getId() {
 		return id;
@@ -97,5 +101,4 @@ public class User {
 		this.enabled = enabled;
 	}
 
-	
 }
