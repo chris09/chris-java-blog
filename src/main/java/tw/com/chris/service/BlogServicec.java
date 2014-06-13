@@ -3,6 +3,7 @@ package tw.com.chris.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.access.method.P;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -42,6 +43,14 @@ public class BlogServicec {
 			}
 		} catch (RssException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	@Scheduled(fixedDelay=36000000)//1H
+	public void reloadBlogs(){
+		List<Blog> blogs = blogRepository.findAll();
+		for(Blog blog : blogs){
+			saveItems(blog);
 		}
 	}
 
